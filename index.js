@@ -16,17 +16,15 @@ let cache;
 
 if (process.env.NODE_ENV === 'development') {
     redisOptions = {
-        host: appConfig.development.redisHost,
-        port: appConfig.development.redisPort
+        client: require('redis').createClient(appConfig.development.redisSocket)
     };
 } else {
     redisOptions = {
-        host: appConfig.production.redisHost,
-        port: appConfig.production.redisPort
+        client: require('redis').createClient(appConfig.production.redisSocket)
     };
 }
 
-cache = require('express-redis-cache')(redisOptions);;
+cache = require('express-redis-cache')(redisOptions);
 
 // allow request from everywhere
 app.use(function (req, res, next) {
