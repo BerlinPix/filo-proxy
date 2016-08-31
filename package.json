@@ -1,0 +1,19 @@
+{
+  "name": "filo-proxy",
+  "version": "0.0.1",
+  "description": "A proxy for facebook graph api calls from filo.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/forever/bin/forever start index.js",
+    "stop": "node node_modules/forever/bin/forever stop index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik Wendt",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-redis-cache": "^0.4.2",
+    "forever": "^0.15.2",
+    "request": "^2.74.0"
+  }
+}

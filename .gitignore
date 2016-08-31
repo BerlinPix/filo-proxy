@@ -1,0 +1,6 @@
+node_modules
+
+.idea
+
+# don't add your appd id and secret into the repo
+facebookAppConfig.*
